@@ -40,7 +40,6 @@ function manageAutoCompOptions(options) {
 }
 function manageDaysForcasts(forcastData) {
   var temp = forcastData.data.DailyForecasts;
-  console.log("temp isssssssss", temp);
   var arr = temp.reduce((acc, el) => {
     acc.push({
       time: el.EpochDate,

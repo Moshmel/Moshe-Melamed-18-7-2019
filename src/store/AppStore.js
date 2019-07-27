@@ -19,7 +19,7 @@ class AppStore {
       this.favorited.splice(idx, 1);
     }
 
-    console.log("favorited array", toJS(this.favorited));
+   
     storageService.saveToStorage(FAV_DATA, this.favorited);
   };
 }

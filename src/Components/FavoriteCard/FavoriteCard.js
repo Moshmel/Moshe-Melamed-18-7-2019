@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import './FavoriteCard.scss';
 const FavoriteCard = props => {
   const { info } = props;
-  console.log('this is info',info)
   const path=`/home/${info.label}/${info.id}`
   const {isDayTime}=info;
   return (
