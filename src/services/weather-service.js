@@ -27,7 +27,7 @@ async function getFiveDaysForcast(cityid) {
 }
 async function getAutoCompOptions(val) {
   const req =
-    " `https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=%09EDoXcIUtqNmGbRlLbqNReSUUtgmnUHt0&q=${val}&language=en-us HTTP/1.1`";
+     `https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=%09EDoXcIUtqNmGbRlLbqNReSUUtgmnUHt0&q=${val}&language=en-us HTTP/1.1`;
   return axios.get(req);
 }
 function manageAutoCompOptions(options) {
