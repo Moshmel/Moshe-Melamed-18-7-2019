@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Moshe-Melamed-18-7-2019/precache-manifest.a4289261d9a1a11603656e859e0d3bcc.js"
+  "/Moshe-Melamed-18-7-2019/precache-manifest.2621df4acfb8d15028975e08b5c3df41.js"
 );
 
 self.addEventListener('message', (event) => {
