@@ -5,11 +5,10 @@ async function getFavoritesData(favoritedArray) {
   for (let idx = 0; idx < favoritedArray.length; idx++) {
     let fav = favoritedArray[idx];
     try {
-      let favInfo = await axios.get(
-        `https://dataservice.accuweather.com/currentconditions/v1/${
-          fav.id
-        }?apikey=EDoXcIUtqNmGbRlLbqNReSUUtgmnUHt0&language=en-us&details=falseHTTP/1.1`
-      );
+      let req = `https://dataservice.accuweather.com/currentconditions/v1/${
+        fav.id
+      }?apikey=EDoXcIUtqNmGbRlLbqNReSUUtgmnUHt0&language=en-us&details=falseHTTP/1.1`;
+      let favInfo = await axios.get(req);
       favInfo = favInfo.data[0];
 
       fav.isDayTime = favInfo.IsDayTime;
@@ -23,14 +22,13 @@ async function getFavoritesData(favoritedArray) {
 }
 
 async function getFiveDaysForcast(cityid) {
-  return axios.get(
-    `https://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityid}?apikey=EDoXcIUtqNmGbRlLbqNReSUUtgmnUHt0&language=en-us&details=false&metric=false%20HTTP/1.1`
-  );
+  const req = `https://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityid}?apikey=EDoXcIUtqNmGbRlLbqNReSUUtgmnUHt0&language=en-us&details=false&metric=false%20HTTP/1.1`;
+  return axios.get(req);
 }
 async function getAutoCompOptions(val) {
-  return axios.get(
-    `https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=%09EDoXcIUtqNmGbRlLbqNReSUUtgmnUHt0&q=${val}&language=en-us HTTP/1.1`
-  );
+  const req =
+    " `https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=%09EDoXcIUtqNmGbRlLbqNReSUUtgmnUHt0&q=${val}&language=en-us HTTP/1.1`";
+  return axios.get(req);
 }
 function manageAutoCompOptions(options) {
   var arr = options.data.reduce((acc, el) => {
